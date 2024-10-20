@@ -21,8 +21,8 @@ int main() {
     for (int i = 0; i < 9; i++) {
         string value;
         string player;
-        write_tictactoe(values);
         player.append("Player ").append(turn);
+        write_tictactoe(values);
 
         if (validate_tictactoe_complete(values)) {
             const string winner = value == "o" ? "2nd Player" : "1st Player";
@@ -89,8 +89,8 @@ void write_tictactoe(string values[3][3]) {
 bool validate_tictactoe_complete(string values[3][3]) {
     for (int i = 0; i < 3; i++) {
         if (values[i][0] + values[i][1] == values[i][1] + values[i][2]) return values[i][0] != " ";
-
         if (values[0][i] + values[1][i] == values[1][i] + values[2][i]) return values[0][i] != " ";
+
         if (values[0][0] + values[1][1] == values[1][1] + values[2][2] ||
             values[0][2] + values[1][1] == values[1][1] + values[2][0]) {
             return values[1][1] != " ";
